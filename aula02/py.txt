@@ -1,0 +1,30 @@
+frutas = ["maça, banana"]
+
+frutas.append("laranja")
+
+frutas.insert(1,"morango")
+
+frutas.extend(["uva","abacaxi"])
+
+print (f"lista após adições:{frutas}")
+
+
+usuarios = [
+    {"nome": "mario", "idade": 25},
+    {"nome": "ana", "idade": 30},
+    {"nome": "pedro", "idade": 20},
+
+
+]
+
+usuarios.append ({"nome": "beto", "idade":13})
+
+print("--- usuario maires e idade---")
+for u in usuarios:
+
+    nome_limpo= u["nome"].strip().title() 
+
+    if u ["idade"] >= 18:
+        print(f"nome: {nome_limpo} | idade: {u['idade']}")
+
+print(f"\n total cadastros :{len(usuarios)}")
