@@ -10,8 +10,6 @@ int main () {
     cout << ("digite a nota 2: ");
     cin>> n2;
 
-    
-
     media = (n1 + n2)/2;
     if (media >= 6) {
     cout << "aluno aprovado" << media <<endl; 
