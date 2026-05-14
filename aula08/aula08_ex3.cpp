@@ -2,21 +2,14 @@
 using namespace std;
 
 int main () {
+    int i;
+    int vetor (5);
 
-    #define NILIN 4
-    #define NICOL 5
-    
-    int i,j;
-    double laboratorio[NILIN][NICOL];
+    for ( i = 0; i<5; i++)(
+        vetor [i] = 5-i;)
 
-    for (i = 0; i<NILIN; i++){
-        for (j = 0; j<NICOL; j++) {
-            cout << "Digite o peso do aluno sentado: " << j <<  "fila" << i << endl;
-            cin >> laboratorio[i][j];}}
-        
-    for (i=0; i<NILIN; i++)
-            for (j=0; j<NICOL; j++)
-            cout << " o peso do aluno" << j << "fila" << i << é << laboratorio [i][j] << endl;
-            
-            return 0;
-}
+        for ( i=0; i<5; i++)
+        cout << "o valor guardado na posiçao " << i << "é" << vetor [i] << endl;
+
+        return 0;
+    }
