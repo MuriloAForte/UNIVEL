@@ -60,7 +60,7 @@ int main()
 
     Carro carro1("opala", "prata", 120);
     Carro carro2("megane", "cinza", 0);
-    Carro carro3("F1000", "azul", 60);
+    Carro carro3("F1000", "azul", 60); 
 
     carro1.exibirInformacoes();
     carro1.acelerar(50);
