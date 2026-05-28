@@ -2,19 +2,63 @@
 using namespace std;
 
 class Funcionario{
-    private:
-        double salario;
-        int nome;
+    protected:
+        double salarioBase;
+        string nome;
 
     public:
-        Funcionario () {
-            double salario = 0;
-            int nome = " ";
+        Funcionario(double salarioBase_, string nome) {
+            salarioBase = salarioBase_;
+            this ->nome = nome;
         }
 
-        void calcularsalario( duble salario)
-            calcularsalario = salario;
+        virtual double calcularsalario() {
+            return  salarioBase;
+        }
 
+        void exibir() {
+            cout << "Nome: " << nome << endl;
+            cout << "salario: " << calcularsalario() << endl;
+        }
+    };
+
+class Gerente : public Funcionario {
+        private: 
+            double bonus;
+
+        public:
+            Gerente(double salarioBase, string nome, double bonus)
+                :Funcionario(salarioBase, nome){
+                    this->bonus = bonus;
+                }
+            double calcularsalario() override{
+                return  salarioBase + bonus;
+            }
+};
+class Vendedor : public Funcionario{
+        private: 
+            double comissao;
+
+        public:
+            Vendedor(double salarioBase, string nome, double comissao) 
+                :Funcionario(salarioBase, nome){
+                    this->comissao = comissao;
+                }
+            double calcularsalario() override {
+                return salarioBase + comissao;
+            }
+};
+
+int main () {
+
+    Gerente g(2000,"silviano", 900);
+    Vendedor v(1800,"mauricio", 350);
+
+    g.exibir();
+    cout << "---";
+    v.exibir();
+
+    return  0;
 }
-//fazendo ainda.....................
-//..............................
+    
+
